@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    bundle: './src/index.js'
+    bundle: './src/index.ts'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -10,11 +10,15 @@ module.exports = {
   },
   // import, export時の拡張子の省略
   resolve: {
-    extensions: ['.ts, .js']
+    extensions: ['.ts', '.js'],
   },
   // ローカルサーバーの設定
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    // webpack-dev-serverのv4からcontentBaseが利用できない
+    // contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory : path.join(__dirname, 'dist')
+    },
     // 自動立ち上げ
     open: true
   },
@@ -25,5 +29,8 @@ module.exports = {
         test: /\.ts$/
       }
     ]
+  },
+    stats: {
+    errorDetails: true
   }
 }
