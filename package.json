@@ -37,5 +37,15 @@
   "dependencies": {
     "4": "^0.0.0",
     "querystring-es3": "^0.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint-fix"
+    ]
   }
 }
