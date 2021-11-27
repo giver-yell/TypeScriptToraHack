@@ -12,10 +12,5 @@ export default class world {
     if (elem) {
       elem.innerText = this.message
     }
-
-
-
-
-
   }
 }
