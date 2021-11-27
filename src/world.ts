@@ -1,5 +1,5 @@
 export default class world {
-  message: string;
+  message: string
 
   constructor(message: string) {
     this.message = message
@@ -8,7 +8,7 @@ export default class world {
   /**
    * sayHello
    */
-  public sayHello(elem: HTMLElement | null) {
+  public sayHello(elem: HTMLElement | null): void {
     if (elem) {
       elem.innerText = this.message
     }
