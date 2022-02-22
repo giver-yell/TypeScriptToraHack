@@ -39,10 +39,11 @@
 sudo 付きのコマンドは Mac OS のパスワード入力が必要です。 4.を実行すると、コマンドラインツールをインストールするか聞かれるので、同意して進めてください。
 
 1. `sudo rm -rf $(xcode-select -print-path)`
-2. `sudo rm -rf /Library/Developer/CommandLineTools
+2. `sudo rm -rf /Library/Developer/CommandLineTools`
 3. `sudo xcode-select --reset`
 4. `xcode-select --install`
-5. `xcode-select -p` 5.の実行結果が/Library/Developer/CommandLineTools でなければ sudo xcode-select -switch /Library/Developer/CommandLineTools を実行
+5. `xcode-select -p`   
+   5.の実行結果が/Library/Developer/CommandLineTools でなければ `sudo xcode-select -switch /Library/Developer/CommandLineTools` を実行  
    インストールが完了したら、「3.関連パッケージのインストール」のコマンドを再実行してください。
 
 # 2. ESLint と Prettier の CI 環境を構築
@@ -53,10 +54,10 @@ sudo 付きのコマンドは Mac OS のパスワード入力が必要です。 
 
 ## 2-2. husky がもし動かなかったら...
 
-.git/hooks が正常に作成されていない可能性アリ これで確認する
-`ls -la .git/hooks/ls -la .git/hooks/`
-`.sample`しかなかったら NG
-NG の場合はインストールし直す `npm uninstall huksy`
-`npm install --save-dev husky`
-もう一度 hooks を確認
-`ls -la .git/hooks/ls -la .git/hooks/`
+1. .git/hooks が正常に作成されていない可能性があるので以下で確認する  
+`ls -la .git/hooks/ls -la .git/hooks/`  
+`.sample`しかなかったら NG  
+2. NG の場合はインストールし直す `npm uninstall huksy`  
+`npm install --save-dev husky`  
+3. もう一度 hooks を確認  
+`ls -la .git/hooks/ls -la .git/hooks/`  
